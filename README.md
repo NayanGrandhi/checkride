@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# checkride (working name)
 
-## Getting Started
+AI checkride prep for pilots. Phase 1: a text-only Private Pilot mock oral
+exam, graded against the FAA Airman Certification Standards (FAA-S-ACS-6C),
+with citations to official FAA sources and a debrief.
 
-First, run the development server:
+> Practice tool only. Not FAA-approved, and not a substitute for an
+> instructor, a real checkride or the aircraft's POH.
+
+## Stack
+
+- Next.js (App Router) + TypeScript + Tailwind CSS v4
+- Supabase: Postgres, auth, storage, pgvector (from step 1b)
+- Claude API: examiner, grading, tutor (from step 1d)
+- Voyage AI: embeddings for FAA document search (from step 1c)
+- Hosted on Vercel
+
+## Run it locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build check
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Layout
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/app/            pages and API routes (Next.js App Router)
+src/components/     shared UI pieces (e.g. Disclaimer)
+src/fonts/          bundled fonts (SIL Open Font License)
+src/app/globals.css design tokens (colors, fonts)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design system ("sectional chart")
 
-## Learn More
+Colors are borrowed from FAA sectional charts and live as Tailwind tokens
+in `src/app/globals.css`:
 
-To learn more about Next.js, take a look at the following resources:
+| Token | Use |
+|---|---|
+| `chart` | page background |
+| `ink`, `ink-soft`, `ink-muted` | text |
+| `airspace` | primary buttons and links |
+| `course` (magenta) | the debrief route line only |
+| `terrain` | the "current ACS task" strip |
+| `sat`, `work`, `unsat` | grades, always with a text label |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fonts: **B612** (Airbus cockpit typeface) for headings, scores and ACS
+codes (`font-display`), **Atkinson Hyperlegible** for body text.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build phases
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Text mock oral with ACS grading, citations and debrief  ← current
+2. Voice, personas, scenario chains, live weather
+3. Accounts, free tier, Stripe, progress, share cards (launch)
+4. Study system
+5. Document uploads
+6. Instructor dashboard
+7. Flight school admin
+8. More certificates, then international

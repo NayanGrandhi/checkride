@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Design tokens: "sectional chart" look.
+  Colors come from FAA sectional aeronautical charts.
+  Use these names in Tailwind classes, e.g. bg-chart, text-ink, bg-airspace.
+*/
+@theme {
+  --color-chart: #eef2ec;        /* page background (chart paper) */
+  --color-chart-deep: #dde4da;   /* pressed / segmented backgrounds */
+  --color-panel: #f6f8f4;        /* composer and footer bars */
+  --color-line: #c9d3c6;         /* borders and dividers */
+  --color-ink: #1b2a3a;          /* main text */
+  --color-ink-soft: #3d4c5c;     /* secondary text */
+  --color-ink-muted: #4a5868;    /* small print (still passes contrast) */
+  --color-airspace: #2456a6;     /* primary actions */
+  --color-airspace-dark: #173f80;
+  --color-course: #a3266f;       /* magenta: route line only */
+  --color-terrain: #e6d9bf;      /* current-task strip */
+  --color-terrain-ink: #4d4433;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Grade colors. Always pair with a text label, never color alone. */
+  --color-sat: #1f7a4d;
+  --color-work: #7a4700;
+  --color-work-bg: #f6e3c2;
+  --color-unsat: #b3261e;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-b612), system-ui, sans-serif;
+  --font-sans: var(--font-atkinson), system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-chart);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-airspace);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

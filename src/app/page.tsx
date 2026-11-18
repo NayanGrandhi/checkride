@@ -1,69 +1,34 @@
-import Image from "next/image";
+import { Disclaimer } from "@/components/Disclaimer";
 
+// Step 1a placeholder. Replaced by the real "Start practice" screen in step 1d.
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="relative mx-auto flex w-full max-w-md flex-1 flex-col gap-6 overflow-hidden px-5 pt-5 pb-6">
+      {/* Airspace rings, a nod to sectional charts. Decorative only. */}
+      <svg
+        aria-hidden="true"
+        width="320"
+        height="320"
+        viewBox="0 0 320 320"
+        className="pointer-events-none absolute -top-44 -right-48 opacity-40"
+      >
+        <circle cx="160" cy="160" r="150" fill="none" stroke="#2456a6" strokeWidth="2" />
+        <circle cx="160" cy="160" r="100" fill="none" stroke="#2456a6" strokeWidth="2" />
+        <circle cx="160" cy="160" r="52" fill="none" stroke="#a3266f" strokeWidth="2" strokeDasharray="6 5" />
+      </svg>
+
+      <header className="relative font-display text-lg font-bold tracking-wide">checkride</header>
+
+      <section className="relative flex flex-col gap-2 pt-4">
+        <h1 className="font-display text-[30px] font-bold leading-tight">Cleared for setup.</h1>
+        <p className="text-base leading-relaxed text-ink-soft">
+          The project skeleton is live. Next we load the FAA standards and
+          handbooks, then build the AI examiner.
+        </p>
+      </section>
+
+      <div className="flex-1" />
+      <Disclaimer />
+    </main>
   );
 }
