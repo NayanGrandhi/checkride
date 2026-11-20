@@ -1,0 +1,51 @@
+[
+  {
+    "id": "phak",
+    "short_name": "PHAK",
+    "title": "Pilot's Handbook of Aeronautical Knowledge",
+    "doc_number": "FAA-H-8083-25C",
+    "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/phak"
+  },
+  {
+    "id": "afh",
+    "short_name": "AFH",
+    "title": "Airplane Flying Handbook",
+    "doc_number": "FAA-H-8083-3C",
+    "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/airplane_handbook"
+  },
+  {
+    "id": "avwx",
+    "short_name": "Aviation Weather Handbook",
+    "title": "Aviation Weather Handbook",
+    "doc_number": "FAA-H-8083-28B",
+    "url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/faa-h-8083-28-aviation-weather-handbook"
+  },
+  {
+    "id": "aim",
+    "short_name": "AIM",
+    "title": "Aeronautical Information Manual",
+    "doc_number": "AIM Basic with Change 3 (July 9, 2026)",
+    "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/"
+  },
+  {
+    "id": "cug",
+    "short_name": "Chart Users' Guide",
+    "title": "Aeronautical Chart Users' Guide",
+    "doc_number": "Edition dated July 9, 2026",
+    "url": "https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/aero_guide"
+  },
+  {
+    "id": "cfr61",
+    "short_name": "14 CFR Part 61",
+    "title": "14 CFR Part 61: Certification: Pilots, Flight Instructors, and Ground Instructors",
+    "doc_number": "eCFR, current as of 2026-11-18",
+    "url": "https://www.ecfr.gov/current/title-14/part-61"
+  },
+  {
+    "id": "cfr91",
+    "short_name": "14 CFR Part 91",
+    "title": "14 CFR Part 91: General Operating and Flight Rules",
+    "doc_number": "eCFR, current as of 2026-11-18",
+    "url": "https://www.ecfr.gov/current/title-14/part-91"
+  }
+]
